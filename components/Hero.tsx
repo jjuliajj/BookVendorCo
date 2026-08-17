@@ -1,73 +1,95 @@
 import Link from "next/link";
-import { ArrowRight, Package, Truck, ShieldCheck, Box, Database } from "lucide-react";
+import { ArrowRight, GraduationCap, ShieldCheck, Sparkles, BookOpen, Layers, Award } from "lucide-react";
 
 export default function Hero() {
-  const stockInventorySummary = [
-    { sku: "SKU-9021", title: "Political Philosophy Folio", stock: "1,420 UNITS", tier: "WHOLESALE TIER A" },
-    { sku: "SKU-8412", title: "Modern Economics Archive", stock: "850 UNITS", tier: "WHOLESALE TIER A" },
-    { sku: "SKU-7721", title: "Historical Masterworks", stock: "3,100 UNITS", tier: "WHOLESALE TIER B" },
-  ];
-
   return (
-    <section className="pt-32 pb-12 bg-[#F8FAFC] border-b-4 border-[#1E293B] font-mono">
-      <div className="container mx-auto px-4 sm:px-8 md:px-12 max-w-7xl">
+    <section className="pt-32 pb-16 bg-[#F7F5F0] border-b border-[#002147]/10 font-sans relative overflow-hidden">
+      {/* Background Subtle Accent Watermark */}
+      <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 rounded-full bg-[#E66D5C]/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-96 h-96 rounded-full bg-[#002147]/5 blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-4 sm:px-8 md:px-12 max-w-7xl relative z-10">
         
-        {/* Commercial Freight Warehouse Banner */}
-        <div className="bg-[#1E293B] text-white rounded-lg p-6 sm:p-12 border-2 border-[#EA580C] shadow-2xl grid lg:grid-cols-12 gap-8 items-center">
+        {/* Main Academic Hero Card */}
+        <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 sm:p-12 md:p-16 border border-[#002147]/15 shadow-xl grid lg:grid-cols-12 gap-10 items-center">
           
-          {/* Left Column: Industrial Headlines & Fast Lookup */}
+          {/* Left Column: Headlines & CTA */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#EA580C] text-white text-xs font-bold rounded uppercase">
-              <Package className="w-4 h-4" /> WAREHOUSE LOCATION: WH-01 • COMMERCIAL CATALOG
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#002147]/5 text-[#002147] text-xs font-bold rounded-full border border-[#002147]/15 uppercase tracking-widest font-sans">
+              <GraduationCap className="w-4 h-4 text-[#E66D5C]" /> Oxford Academic Press Repository
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-black leading-none uppercase tracking-tight text-white">
-              COMMERCIAL BOOK <br />
-              <span className="text-[#EA580C]">SUPPLY & FULFILLMENT</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-[#002147] leading-[1.1]">
+              Scholarly Literature & <br />
+              <span className="text-[#E66D5C] italic font-normal">Digital Archives</span>
             </h1>
 
-            <p className="text-xs sm:text-sm text-[#94A3B8] font-sans leading-relaxed">
-              Centralized commercial book distribution hub. Direct EPUB bulk licensing, verified catalog manifests, and automated warehouse fulfillment.
+            <p className="text-base sm:text-lg text-[#002147]/70 font-sans leading-relaxed max-w-xl">
+              Centralized digital book supply hub. Access peer-reviewed monographs, philosophy essays, and curated literature formatted for verified EPUB digital devices.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link 
                 href="/collections" 
-                className="bg-[#EA580C] hover:bg-white text-white hover:text-[#1E293B] px-8 py-3.5 rounded font-bold text-xs uppercase tracking-wider transition-all shadow flex items-center gap-2"
+                className="bg-[#002147] hover:bg-[#E66D5C] text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md flex items-center gap-2 group"
               >
-                <span>Browse Vendor Catalog</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Browse Full Catalogue</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
+              
+              <Link
+                href="/genres"
+                className="bg-[#F7F5F0] hover:bg-[#002147]/10 text-[#002147] px-6 py-4 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 border border-[#002147]/20 flex items-center gap-2"
+              >
+                <Layers className="w-4 h-4 text-[#002147]" />
+                <span>Explore Disciplines</span>
+              </Link>
+            </div>
+
+            {/* Micro badges */}
+            <div className="pt-4 border-t border-[#002147]/10 flex flex-wrap items-center gap-6 text-xs text-[#002147]/60 font-semibold">
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4 text-emerald-600" /> Peer-Reviewed Citations
+              </span>
+              <span className="flex items-center gap-1.5">
+                <BookOpen className="w-4 h-4 text-[#E66D5C]" /> Instant EPUB 3.0 Manifest
+              </span>
             </div>
           </div>
 
-          {/* Right Column: Real-Time Warehouse Stock Status Table */}
-          <div className="lg:col-span-5 bg-[#0F172A] p-6 rounded border border-[#CBD5E1]/30 space-y-4">
-            <div className="border-b border-[#EA580C] pb-2 flex items-center justify-between">
-              <span className="text-[10px] font-bold text-[#EA580C] uppercase flex items-center gap-1">
-                <Database className="w-3.5 h-3.5" /> LIVE INVENTORY STATUS
+          {/* Right Column: Featured Press Stats Card */}
+          <div className="lg:col-span-5 bg-[#002147] text-[#F7F5F0] p-8 rounded-2xl border border-[#002147] shadow-2xl space-y-6">
+            <div className="border-b border-white/10 pb-4 flex items-center justify-between">
+              <span className="text-xs font-bold text-[#E66D5C] uppercase tracking-widest flex items-center gap-2">
+                <Award className="w-4 h-4" /> Editorial Authority
               </span>
-              <span className="text-[9px] text-[#94A3B8] uppercase">WH-MANIFEST-2026</span>
+              <span className="text-[10px] font-mono text-white/50 uppercase">EST. 2026</span>
             </div>
 
-            <div className="space-y-3 text-xs">
-              {stockInventorySummary.map((item) => (
-                <div key={item.sku} className="bg-[#1E293B] p-3 rounded border border-[#CBD5E1]/20 flex justify-between items-center">
-                  <div>
-                    <span className="text-[9px] font-bold text-[#EA580C]">{item.sku}</span>
-                    <div className="font-bold text-white truncate max-w-[180px]">{item.title}</div>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-emerald-400 font-bold text-[10px] block">{item.stock}</span>
-                    <span className="text-[8px] text-[#94A3B8]">{item.tier}</span>
-                  </div>
-                </div>
-              ))}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                <div className="text-3xl font-serif font-bold text-white">40+</div>
+                <div className="text-[10px] font-bold text-white/60 uppercase tracking-wider mt-1">Published Volumes</div>
+              </div>
+
+              <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                <div className="text-3xl font-serif font-bold text-[#E66D5C]">6</div>
+                <div className="text-[10px] font-bold text-white/60 uppercase tracking-wider mt-1">Disciplines</div>
+              </div>
+
+              <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                <div className="text-3xl font-serif font-bold text-white">100%</div>
+                <div className="text-[10px] font-bold text-white/60 uppercase tracking-wider mt-1">DRM-Free EPUB</div>
+              </div>
+
+              <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                <div className="text-3xl font-serif font-bold text-[#E66D5C]">Instant</div>
+                <div className="text-[10px] font-bold text-white/60 uppercase tracking-wider mt-1">Digital Delivery</div>
+              </div>
             </div>
 
-            <div className="pt-2 border-t border-[#CBD5E1]/20 text-[9px] text-[#94A3B8] uppercase flex justify-between font-bold">
-              <span>FULFILLMENT: INSTANT</span>
-              <span>EPUB 3.0 MANIFEST</span>
+            <div className="pt-2 text-center text-xs text-white/70 italic font-serif">
+              "Literature is the quiet conversation between minds across centuries."
             </div>
           </div>
 

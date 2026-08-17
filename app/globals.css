@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F7F5F0;
+  --foreground: #002147;
+  --oxford-navy: #002147;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: serif;
+}

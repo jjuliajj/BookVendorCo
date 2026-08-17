@@ -76,12 +76,6 @@ export default function BookCard({ id, title, author, price, category, image, de
           <p className="text-xs text-[#002147]/70 italic mt-0.5 truncate">
             by {author}
           </p>
-          
-          {description && (
-            <p className="text-[11px] text-[#002147]/60 line-clamp-2 leading-relaxed mt-1 hidden sm:block">
-              {description}
-            </p>
-          )}
         </div>
 
         {/* Format Selector & Purchase Footer */}
